@@ -65,6 +65,11 @@ const MakePlayListPage: React.FC = () => {
             alert('닉네임을 입력해주세요.');
             return;
         }
+        else if (nickname.length > 6) {
+            alert('닉네임은 최대 6자까지 가능합니다.');
+            setNickname('');
+            return;
+        }
 
         if (hasDuplicate) {
             alert("중복된 노래가 있어요! 모두 다른 노래로 선택해주세요.");

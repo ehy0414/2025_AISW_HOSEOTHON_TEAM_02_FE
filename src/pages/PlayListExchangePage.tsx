@@ -34,7 +34,7 @@ const PlayListExchangePage: React.FC = () => {
     };
 
     return (
-        <div className="h-full flex items-center justify-center bg-gray-50">
+        <div className="h-full flex items-center justify-center">
             {/* Main Container */}
             <div className="w-full bg-white shadow-xl border border-gray-200">
                 
@@ -75,9 +75,9 @@ const PlayListExchangePage: React.FC = () => {
                 <div className="w-full md:w-[40%] bg-white flex flex-col justify-between">
                     
                     {/* Top: Exchange Info & Input */}
-                    <div className="p-8 flex flex-col items-end w-full">
+                    <div className="p-10 flex flex-col items-end w-full">
                         {/* Target Type Info */}
-                        <div className="mb-8 text-center w-full">
+                        <div className="mb-10 text-center w-full">
                             <h3 className="text-3xl font-bold text-black mb-1 ">
                                 <span className="text-[#758BFD]">{exchangeData.targetGeneration}</span>세대 <span className="text-[#758BFD]">{exchangeData.targetType}</span> 유형 사용자가 제작했어요
                             </h3>
@@ -95,16 +95,24 @@ const PlayListExchangePage: React.FC = () => {
                     </div>
 
                     {/* Bottom: Save Button */}
-                    <div className="h-16 my-4 border-t border-gray-300 flex items-center justify-end px-8 gap-4 hover:bg-gray-100 transition-colors cursor-pointer"
+                    <div 
+                        className="group h-20 border-t border-gray-300 flex items-center justify-end px-8 gap-4 hover:bg-gray-100 transition-colors cursor-pointer"
                         onClick={handleSave}
                     >
                         <span className="text-2xl font-bold text-black">
                             저장하기
                         </span>
-                        <div className="w-12 h-12 rounded-full border border-gray-400 flex items-center justify-center group-hover:border-gray-600">
-                            <ChevronRight className="text-gray-600" size={24} />
+
+                        {/* 아이콘 박스에도 group-hover 적용 */}
+                        <div className="w-12 h-12 rounded-full border border-gray-400 flex items-center justify-center 
+                                        group-hover:border-gray-600 transition-colors">
+                            <ChevronRight 
+                                className="text-gray-600 group-hover:text-gray-800 transition-colors" 
+                                size={24} 
+                            />
                         </div>
                     </div>
+
 
                 </div>
 
