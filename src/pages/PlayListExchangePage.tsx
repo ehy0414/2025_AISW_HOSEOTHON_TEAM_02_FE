@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import Header from '../components/Header';
 import PlayListHeader from '../components/PlayListHeader';
+import { useNavigate } from 'react-router-dom';
 
 const PlayListExchangePage: React.FC = () => {
-
+    const navigate = useNavigate();
     const [review, setReview] = useState('');
     const nickname = JSON.parse(localStorage.getItem('nickname') || '{"nickname":"사용자"}').nickname;
 
