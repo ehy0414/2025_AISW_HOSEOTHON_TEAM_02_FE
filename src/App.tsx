@@ -6,6 +6,7 @@ import QuestionResultPage from './pages/QuestionResultPage';
 import PlaylistResult from './pages/MakePlayListPage';
 import ReviewPage from "./pages/ReviewPage.tsx";
 import SharePage from './pages/SharePage.tsx';
+import PlayListResultPage from './pages/PlayListResultPage.tsx';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path='/make-playlist' element={<PlaylistResult />} />
                 <Route path='/review' element={<ReviewPage />} />
                 <Route path='/share' element={<SharePage/>} />
+                <Route path='/play-list-complete' element={<PlayListResultPage/>} />
             </Routes>
         </BrowserRouter>
     );
