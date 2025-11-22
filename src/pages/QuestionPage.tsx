@@ -188,6 +188,10 @@ const QuestionPage: React.FC = () => {
         type: result.resultType 
       } 
     });
+      localStorage.setItem('userType', JSON.stringify({
+        generation: result.resultGen, 
+        type: result.resultType 
+      }));
   };
 
   return (
