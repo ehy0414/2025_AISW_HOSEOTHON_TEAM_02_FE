@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import Header from '../components/Header';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { kpopData } from "../data/kpopData";
 import QuestionHeader from '../components/QuestionHeader';
 
@@ -15,6 +15,7 @@ type TypeKeys = "감성" | "댄스" | "힙합" | "보컬";
 
 const QuestionResultPage: React.FC = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const { generation = '', type = '' } = (location.state ?? {}) as LocationState;
 
     // 사용 예시
@@ -28,7 +29,9 @@ const QuestionResultPage: React.FC = () => {
         return songs;
     }
 
-
+    const onClickMakePlaylistButton = () => {
+      navigate('/make-playlist', { state: { generation, type } });
+    }
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-800">
@@ -64,7 +67,8 @@ const QuestionResultPage: React.FC = () => {
           </div>
 
           {/* Right: Action Button (Playlist) */}
-          <button className="w-[190px] bg-[#EBEFFF] border-l border-gray-300 flex flex-col justify-center items-center hover:bg-[#dde2ff] transition-colors cursor-pointer group">
+          <button className="w-[190px] bg-[#EBEFFF] border-l border-gray-300 flex flex-col justify-center items-center hover:bg-[#dde2ff] transition-colors cursor-pointer group"
+            onClick={onClickMakePlaylistButton}>
             <span className="text-body-big font-bold text-gray-800 mb-4 leading-tight text-center px-2">
               플리<br />제작<br />하기
             </span>
