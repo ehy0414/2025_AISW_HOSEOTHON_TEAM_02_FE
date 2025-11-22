@@ -4,6 +4,8 @@ import MainPage from "./pages/MainPage";
 import QuestionPage from './pages/QuestionPage';
 import QuestionResultPage from './pages/QuestionResultPage';
 import PlaylistResult from './pages/MakePlayListPage';
+import ReviewPage from "./pages/ReviewPage.tsx";
+import SharePage from './pages/SharePage.tsx';
 
 function App() {
     return (
@@ -13,6 +15,8 @@ function App() {
                 <Route path='/question' element={<QuestionPage />} />
                 <Route path='/result' element={<QuestionResultPage />} />
                 <Route path='/make-playlist' element={<PlaylistResult />} />
+                <Route path='/review' element={<ReviewPage />} />
+                <Route path='/share' element={<SharePage/>} />
             </Routes>
         </BrowserRouter>
     );
