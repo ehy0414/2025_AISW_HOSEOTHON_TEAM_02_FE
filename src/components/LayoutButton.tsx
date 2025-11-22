@@ -9,7 +9,7 @@ export default function LayoutButton({ children, onClick, className }: LayoutBut
         <button
             onClick={onClick}
             className={`
-        w-full h-full text-left transition-all duration-200 
+ w-full h-full text-left transition-all duration-200 
         cursor-pointer bg-primary-100 hover:bg-hover-100
         ${className}
       `}

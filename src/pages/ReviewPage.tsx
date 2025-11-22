@@ -41,7 +41,7 @@ export default function ReviewPage() {
             <Header />
 
             <div className="text-center py-8 border-b border-black">
-                <h1 className="text-nickname">노래 감상평 확인하기</h1>
+                <h1 className="text-7xl font-black">노래 감상평 확인하기</h1>
             </div>
 
             <div className="grid grid-cols-3 border-y border-black text-center">

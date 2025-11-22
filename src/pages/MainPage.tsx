@@ -6,8 +6,12 @@ import MainImg3 from "../assets/img/MainImg3.svg";
 import LayoutButton from "../components/LayoutButton";
 import Nextbutton_Left from "../assets/img/Nextbutton_Left.svg";
 import Nextbutton_Right from "../assets/img/Nextbutton_Right.svg";
+import { useNavigate } from "react-router-dom";
+
 
 export default function MainPage() {
+    const navigate = useNavigate();
+
     return (
         <main className="h-screen grid grid-rows-[auto_auto_1fr] overflow-hidden">
             <Header />
@@ -30,7 +34,7 @@ export default function MainPage() {
                         />
                     </div>
 
-                    <LayoutButton className="col-span-1 border-l border-black p-6 flex flex-col">
+                    <LayoutButton onClick={() => navigate("/review")} className="col-span-1 border-l border-black p-6 flex flex-col">
                         <div className="text-black text-heading-h3 flex items-center gap-2">
                             노래 감상평 확인하기
                             <img src={MainImg3} alt="main3" className="w-8" />
@@ -57,7 +61,10 @@ export default function MainPage() {
                         </p>
                     </div>
 
-                    <LayoutButton className="col-span-1 border-r border-black p-6 flex flex-col">
+                    <LayoutButton
+                        onClick={() => navigate("/question")}
+                        className="col-span-1 border-r border-black p-6 flex flex-col"
+                    >
                         <div className="text-black text-heading-h3">
                             나는 K-POP 몇 세대 일까?
                         </div>
@@ -68,6 +75,7 @@ export default function MainPage() {
                             <img src={Nextbutton_Right} alt="right" className="w-10" />
                         </div>
                     </LayoutButton>
+
 
                     <div className="col-span-1 flex items-end">
                         <img
